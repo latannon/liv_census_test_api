@@ -1,7 +1,14 @@
-from django.urls import path
 
-from . import views
+from django.conf.urls import url, include
+from rest_framework.routers import DefaultRouter
+
+from api import views
+
+# router = DefaultRouter()
+# router.register(r'search', views.CensusSearchResultView)
+# router.register(r'variables', views.VariablesView)
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    url(r'search', views.CensusSearchResultView.as_view()),
+    url(r'variables', views.VariablesView.as_view())
 ]
