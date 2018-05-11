@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'a2^$_($1rddmpah_jiw9av^3nx$s5fs!3lmg0_6irhd!t7_5(c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'liv-census-test-server.herokuapp.com'
+]
 
 
 # Application definition
