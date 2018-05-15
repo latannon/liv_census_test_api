@@ -23,10 +23,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'a2^$_($1rddmpah_jiw9av^3nx$s5fs!3lmg0_6irhd!t7_5(c'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'liv-census-test-server.herokuapp.com'
+    'liv-census-test-server.herokuapp.com',
+    'liv-census-api.herokuapp.com',
+    'localhost',
+    '127.0.0.1'
 ]
 
 
@@ -91,6 +94,9 @@ DATABASES = {
     # CENSUS DB
     'census': {
         'ENGINE': 'django.db.backends.sqlite3',
+        # TODO on peut ajouter ici une variable d'environnement
+        # ou un mecanisme settings en fonction de l'environnement
+        # deploiement de l'application
         'NAME': os.path.join(BASE_DIR, 'us-census.db'),
     }
 }

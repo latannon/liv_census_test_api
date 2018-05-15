@@ -1,5 +1,3 @@
-from django.db import models
-
 # Create your models here.
 # This is an auto-generated Django model module.
 # You'll have to do the following manually to clean this up:
@@ -13,7 +11,6 @@ from django.db import models
 # NOTE_EXERCICE : python manage.py inspectdb --database=census > api/models.py
 
 class CensusLearnSql(models.Model):
-    id = models.AutoField(primary_key=True)
     age = models.IntegerField(blank=True, null=True)
     class_of_worker = models.CharField(db_column='class of worker', max_length=1000, blank=True, null=True)  # Field renamed to remove unsuitable characters.
     industry_code = models.CharField(db_column='industry code', max_length=1000, blank=True, null=True)  # Field renamed to remove unsuitable characters.
@@ -58,5 +55,5 @@ class CensusLearnSql(models.Model):
     salary_range = models.CharField(db_column='salary range', max_length=1000, blank=True, null=True)  # Field renamed to remove unsuitable characters.
 
     class Meta:
-        managed = True
+        managed = False
         db_table = 'census_learn_sql'
